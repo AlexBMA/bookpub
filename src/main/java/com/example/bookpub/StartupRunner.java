@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
 
 public class StartupRunner implements CommandLineRunner {
 
@@ -17,8 +18,8 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private BookRepository bookRepository;
 
-    @Override
-    public void run(String... args) throws Exception {
+    @Scheduled(initialDelay = 1000, fixedRate = 10000)
+    public void run() throws Exception {
         logger.info("DataSource: "+jdbcTemplate.toString());
 
         logger.info("Number of books: " +
@@ -26,4 +27,8 @@ public class StartupRunner implements CommandLineRunner {
 
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
 }
