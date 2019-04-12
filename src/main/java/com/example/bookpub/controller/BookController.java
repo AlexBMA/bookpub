@@ -29,4 +29,5 @@ public class BookController {
     public ResponseEntity<Book> getBook(@PathVariable String isbn) {
         return new ResponseEntity<>(bookService.getBook(isbn), HttpStatus.OK);
     }
+
 }
