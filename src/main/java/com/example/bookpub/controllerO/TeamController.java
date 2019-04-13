@@ -1,6 +1,5 @@
 package com.example.bookpub.controllerO;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +11,7 @@ public class TeamController {
 
     @GetMapping(value = "/teams")
     public ResponseEntity<?> getTeams() {
+
         return new ResponseEntity<>("", HttpStatus.OK);
     }
 }

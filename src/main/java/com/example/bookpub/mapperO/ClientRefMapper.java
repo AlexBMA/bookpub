@@ -18,5 +18,13 @@ public abstract class ClientRefMapper extends ModelMapper {
 
     };
 
+    public PropertyMap<ClientRef, ClientRefDTO> getOrderMap() {
+        return orderMap;
+    }
+
+    public void setOrderMap(PropertyMap<ClientRef, ClientRefDTO> orderMap) {
+        this.orderMap = orderMap;
+    }
+
 
 }
