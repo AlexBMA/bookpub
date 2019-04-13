@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -39,6 +40,11 @@ public class BookController {
     @RequestMapping(value = "/{isbn}/reviewers", method = RequestMethod.GET)
     public ResponseEntity<List<Reviewer>> getReviewers(@PathVariable("isbn") Book book) {
         return new ResponseEntity<>(book.getReviewers(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/session", method = RequestMethod.GET)
+    public String getSessionId(HttpServletRequest request) {
+        return request.getSession().getId();
     }
 
 }
