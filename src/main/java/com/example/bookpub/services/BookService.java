@@ -2,6 +2,7 @@ package com.example.bookpub.services;
 
 
 import com.example.bookpub.entity.Book;
+import com.example.bookpub.model.Isbn;
 import com.example.bookpub.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public Book getBook(String isbn) {
-        return bookRepository.findBookByIsbn(isbn);
+    public Book getBook(Isbn isbn) {
+        return bookRepository.findDistinctByIsbn(isbn.toString());
     }
 }

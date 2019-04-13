@@ -38,12 +38,6 @@ public class Isbn {
 
     @Override
     public String toString() {
-        return "Isbn{" +
-                "endPrefix='" + endPrefix + '\'' +
-                ", registrationGroup='" + registrationGroup + '\'' +
-                ", registrant='" + registrant + '\'' +
-                ", publication='" + publication + '\'' +
-                ", checkDigit='" + checkDigit + '\'' +
-                '}';
+        return endPrefix + "-" + registrationGroup + "-" + registrant + "-" + publication + "-" + checkDigit;
     }
 }

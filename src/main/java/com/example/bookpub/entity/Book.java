@@ -1,15 +1,10 @@
 package com.example.bookpub.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
 public class Book {
     @Id
     @GeneratedValue
@@ -18,9 +13,14 @@ public class Book {
     private String title;
     private String description;
 
+
     @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
+
+
     @ManyToOne
+    @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
     @ManyToMany
@@ -36,4 +36,60 @@ public class Book {
         this.publisher = publisher;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public List<Reviewer> getReviewers() {
+        return reviewers;
+    }
+
+    public void setReviewers(List<Reviewer> reviewers) {
+        this.reviewers = reviewers;
+    }
 }

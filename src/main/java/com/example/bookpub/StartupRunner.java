@@ -1,6 +1,8 @@
 package com.example.bookpub;
 
+import com.example.bookpub.repository.AuthorRepository;
 import com.example.bookpub.repository.BookRepository;
+import com.example.bookpub.repository.PublisherRepository;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,11 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private BookRepository bookRepository;
 
+    @Autowired
+    private AuthorRepository authorRepository;
+    @Autowired
+    private PublisherRepository publisherRepository;
+
     //@Autowired
     //private ClientRefRepository clientRefRepository;
 
@@ -33,6 +40,15 @@ public class StartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+    /*
+        Author author = new Author("Alex", "Antonov");
+        author = authorRepository.save(author);
+        Publisher publisher = new Publisher("Packt");
+        publisher = publisherRepository.save(publisher);
+        Book book = new Book("978-1-78528-415-1", "Spring Boot Recipes", author, publisher);
+        bookRepository.save(book);
+
+     */
 
     }
 }
