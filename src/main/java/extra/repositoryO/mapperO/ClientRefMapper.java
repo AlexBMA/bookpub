@@ -1,7 +1,7 @@
-package com.example.bookpub.mapperO;
+package extra.repositoryO.mapperO;
 
-import com.example.bookpub.dtoO.ClientRefDTO;
-import com.example.bookpub.entityO.ClientRef;
+import extra.repositoryO.dtoO.ClientRefDTO;
+import extra.repositoryO.entityO.ClientRef;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 

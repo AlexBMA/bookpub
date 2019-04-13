@@ -1,6 +1,6 @@
-package com.example.bookpub.repositoryO;
+package extra.repositoryO;
 
-import com.example.bookpub.entityO.ClientRef;
+import extra.repositoryO.entityO.ClientRef;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.bookpub.controllerO;
+package extra.repositoryO.controllerO;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

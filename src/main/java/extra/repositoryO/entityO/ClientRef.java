@@ -1,4 +1,4 @@
-package com.example.bookpub.entityO;
+package extra.repositoryO.entityO;
 
 
 import lombok.Getter;

@@ -1,21 +1,26 @@
 package com.example.bookpub.controller;
 
 
+import com.example.bookpub.editors.IsbnEditor;
 import com.example.bookpub.entity.Book;
+import com.example.bookpub.model.Isbn;
 import com.example.bookpub.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/books")
 public class BookController {
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(Isbn.class, new IsbnEditor());
+    }
 
     @Autowired
     private BookService bookService;
@@ -26,8 +31,8 @@ public class BookController {
     }
 
     @RequestMapping(value = "/{isbn}", method = RequestMethod.GET)
-    public ResponseEntity<Book> getBook(@PathVariable String isbn) {
-        return new ResponseEntity<>(bookService.getBook(isbn), HttpStatus.OK);
+    public ResponseEntity<Book> getBook(@PathVariable Isbn isbn) {
+        return new ResponseEntity<>(bookService.getBook(isbn.toString()), HttpStatus.OK);
     }
 
 }

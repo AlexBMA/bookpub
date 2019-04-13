@@ -1,4 +1,4 @@
-package com.example.bookpub.dtoO;
+package extra.repositoryO.dtoO;
 
 import lombok.Getter;
 import lombok.Setter;

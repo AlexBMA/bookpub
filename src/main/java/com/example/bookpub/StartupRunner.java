@@ -1,7 +1,6 @@
 package com.example.bookpub;
 
 import com.example.bookpub.repository.BookRepository;
-import com.example.bookpub.repositoryO.ClientRefRepository;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private BookRepository bookRepository;
 
-    @Autowired
-    private ClientRefRepository clientRefRepository;
+    //@Autowired
+    //private ClientRefRepository clientRefRepository;
 
     @Scheduled(initialDelay = 1000, fixedRate = 10000)
     public void run() throws Exception {
@@ -28,7 +27,7 @@ public class StartupRunner implements CommandLineRunner {
 
 
         logger.info("Number of items: " +
-                clientRefRepository.count());
+                bookRepository.count());
 
     }
 
